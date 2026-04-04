@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0",
+  "id": "6d366bedeb5a4118a8e8ad78cbe7af04",
+  "accountId": "a23456789876",
+  "partition": "aws",
+  "region": "ap-northeast-1",
+  "type": "SensitiveData:S3Object/CustomIdentifier",
+  "title": "The S3 object contains content that matches a custom data identifier.",
+  "description": "This object contains content that matches one or more custom data identifiers for the organization. The content might include multiple types of sensitive information.",
+  "severity": {
+    "score": "2",
+    "description": "Medium"
+  },
+  "createdAt": "2025-08-06T12:28:18Z",
+  "resourcesAffected": {
+    "s3Bucket": {
+      "arn": "arn:aws:s3:::data-platform-source-yuki-sample",
+      "name": "data-platform-source-yuki-sample",
+      "createdAt": "2025-07-15T09:05:13Z",
+      "owner": {
+        "displayName": "the.oc",
+        "id": "ae211e7ae5135c6a2b029dd8c645adf5b91e20f4c6da6807b1b4493cc43fdffc"
+      },
+      "tags": [
+        {
+          "key": "Project",
+          "value": "data-platform"
+        },
+        {
+          "key": "Environment",
+          "value": "dev"
+        },
+        {
+          "key": "Owner",
+          "value": "data_engineering"
+        },
+        {
+          "key": "TenantId",
+          "value": "tenant-001"
+        },
+        {
+          "key": "ManagedBy",
+          "value": "terraform"
+        },
+        {
+          "key": "CostCenter",
+          "value": "engineering"
+        }
+      ],
+      "defaultServerSideEncryption": {
+        "encryptionType": "AES256"
+      },
+      "publicAccess": {
+        "permissionConfiguration": {
+          "bucketLevelPermissions": {
+            "accessControlList": {
+              "allowsPublicReadAccess": false,
+              "allowsPublicWriteAccess": false
+            },
+            "bucketPolicy": {
+              "allowsPublicReadAccess": false,
+              "allowsPublicWriteAccess": false
+            },
+            "blockPublicAccess": {
+              "ignorePublicAcls": true,
+              "restrictPublicBuckets": true,
+              "blockPublicAcls": true,
+              "blockPublicPolicy": true
+            }
+          },
+          "accountLevelPermissions": {
+            "blockPublicAccess": {
+              "ignorePublicAcls": false,
+              "restrictPublicBuckets": false,
+              "blockPublicAcls": false,
+              "blockPublicPolicy": false
+            }
+          }
+        },
+        "effectivePermission": "NOT_PUBLIC"
+      }
+    },
+    "s3Object": {
+      "bucketArn": "arn:aws:s3:::data-platform-source-yuki-sample",
+      "key": "legacy/legacy_fund_master.csv",
+      "path": "data-platform-source-yuki-sample/legacy/legacy_fund_master.csv",
+      "extension": "csv",
+      "lastModified": "2025-08-06T02:08:01Z",
+      "eTag": "9bd94dbf97a2f32862c5303f2568ce6e",
+      "versionId": "yJeok_79qucT.MOhHLnqIvWW8rZX51D8",
+      "serverSideEncryption": {
+        "encryptionType": "AES256"
+      },
+      "size": "514",
+      "storageClass": "STANDARD",
+      "tags": [
+        {
+          "key": "Project",
+          "value": "data-platform"
+        },
+        {
+          "key": "Owner",
+          "value": "data_engineering"
+        },
+        {
+          "key": "TenantId",
+          "value": "tenant-001"
+        },
+        {
+          "key": "ManagedBy",
+          "value": "terraform"
+        },
+        {
+          "key": "CostCenter",
+          "value": "engineering"
+        },
+        {
+          "key": "DataType",
+          "value": "Legacy"
+        },
+        {
+          "key": "Environment",
+          "value": "dev"
+        },
+        {
+          "key": "Source",
+          "value": "Historical System"
+        }
+      ],
+      "publicAccess": false
+    }
+  },
+  "category": "CLASSIFICATION",
+  "classificationDetails": {
+    "jobArn": "arn:aws:macie2:ap-northeast-1:a23456789876:classification-job/79add0315a2b69145f0568c6750098b5",
+    "result": {
+      "status": {
+        "code": "COMPLETE"
+      },
+      "sizeClassified": "514",
+      "mimeType": "text/csv",
+      "sensitiveData": [],
+      "customDataIdentifiers": {
+        "totalCount": "3",
+        "detections": [
+          {
+            "arn": "0b816b85-34e3-4191-8d18-0d3cb5fab2e0",
+            "name": "data-platform-strategy-code-detector",
+            "count": "3",
+            "occurrences": {
+              "lineRanges": [],
+              "pages": [],
+              "records": [],
+              "cells": [
+                {
+                  "row": "2",
+                  "column": "9",
+                  "columnName": "内部戦略コード"
+                },
+                {
+                  "row": "3",
+                  "column": "9",
+                  "columnName": "内部戦略コード"
+                },
+                {
+                  "row": "4",
+                  "column": "9",
+                  "columnName": "内部戦略コード"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "detailedResultsLocation": "s3://data-platform-macie-results-yuki-sample/classification-results/AWSLogs/a23456789876/Macie/ap-northeast-1/79add0315a2b69145f0568c6750098b5/a23456789876/44aa4541-1188-3819-a433-d5faf37c7ca5.jsonl.gz",
+    "jobId": "79add0315a2b69145f0568c6750098b5",
+    "originType": "SENSITIVE_DATA_DISCOVERY_JOB"
+  }
+}

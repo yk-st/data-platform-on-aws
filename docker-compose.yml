@@ -1,0 +1,32 @@
+services:
+  dev:
+    image: hashicorp/terraform:1.12
+    container_name: dev_shell
+    working_dir: /workspace
+    # デフォルトだと `terraform` コマンドしか叩けないので、シェルを起動するようにエントリポイントを上書き
+    entrypoint: ["/bin/sh"]
+    environment:
+      - AWS_PROFILE=default
+    volumes:
+      - ./data:/workspace/data
+      - ./mwaa:/workspace/mwaa
+      - ./sql:/workspace/sql
+      - ./terraform:/workspace/terraform
+      - ./.aws:/root/.aws
+      - ./terraform/.state:/workspace/terraform/.state  # 状態ファイルをマウント
+    tty: true            # -t 相当
+    stdin_open: true     # -i 相当
+    restart: always      # 常時再起動
+
+  cli:
+    build: .
+    container_name: dev_cli
+    entrypoint: ["/bin/sh"]
+    environment:
+      - AWS_PROFILE=default
+    volumes:
+      - ./.aws:/root/.aws
+      - ./scripts:/usr/local/bin/athena-table-refs
+    tty: true            # -t 相当
+    stdin_open: true     # -i 相当
+    restart: always      # 常時再起動
