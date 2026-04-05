@@ -106,6 +106,17 @@ Enable Macieを選択し、Macieを有効化します。
 
 ![Macieを有効にする](README_IMAGES/maice_enable.png)
 
+# セットアップ手順
+
+インストールにあたっては、Windows/Macなどご自身の環境に合ったインストーラーを選択してください。
+
+```
+git clone https://github.com/yk-st/data-platform-on-aws.git -b v1.0.0
+```
+
+※ -bはv1.x.xの最新のタグを指定してください。
+
+クローン後は各ディレクトリでdocker compose upコマンドを実行してください。
 
 ## Terraformの適用
 Terraform は、クラウドやオンプレ、SaaS リソースを宣言的コードで定義し、差分適用によって環境を構築・更新する Infrastructure as Code ツールです。
@@ -130,16 +141,20 @@ aws_secret_access_key = CCCCC
 ```
 
 terrafrom用のコンテナを用意してください
+
+```
 docker compose build
 docker compose up -d
+```
 
 ## 適用
 suffix(e.g yuki-sample)はバケット名に利用されるため、ユニークな名前を指定してください。
 
+```
 docker exec -it dev_shell sh -c "cd terraform && terraform init"
 docker exec -it dev_shell sh -c "cd terraform && terraform plan -var='bucket_naming_suffix=yuki-sample' -var='aws_region=ap-northeast-1'"
 docker exec -it dev_shell sh -c "cd terraform && terraform apply -auto-approve -var='bucket_naming_suffix=yuki-sample' -var='aws_region=ap-northeast-1'"
-
+```
 ※ bucket_naming_suffixとaws_regionは適宜変更してください
 ※ ap-northeast-1がデフォルト利用リージョンです。
 　以外のリージョンの場合はVariables.tfに記載の変数を適切に変更してください。
