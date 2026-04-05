@@ -1,4 +1,26 @@
-# DataPlatform on Cloud
+# data-platform-on-aws
+
+<p align="center"><b>以下の書籍に関するリポジトリです。データソースを担当します</b></p>
+
+<p align="center">
+    <a href="https://www.amazon.co.jp/dp/4297145634/ref=sspa_dk_detail_0?psc=1&pd_rd_i=4297145634&pd_rd_w=BXEhW&content-id=amzn1.sym.f293be60-50b7-49bc-95e8-931faf86ed1e&pf_rd_p=f293be60-50b7-49bc-95e8-931faf86ed1e&pf_rd_r=VZ7P7XN3YX1NAMJAPZEB&pd_rd_wg=CuOVv&pd_rd_r=31953068-34be-40e1-978d-b417f6b20227&s=books&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw">
+        <img alt="エンジニアのためのデータ分析基盤 基本編" src="書影.png" width="150px" style="margin-right: 100px;">
+    </a>
+    <a href>
+        <img alt="エンジニアのためのデータ分析基盤XXX編" src="title.jpg" width="150px">
+    </a>
+</p>
+
+<div align="center">
+    
+![Commit Activity](https://img.shields.io/github/commit-activity/m/yk-st/data-platform-on-aws?style=for-the-badge)
+
+[![Release](https://img.shields.io/github/release/yk-st/data-platform-on-aws/all.svg?style=for-the-badge)](https://github.com/yk-st/data-platform-on-aws/releases)
+
+
+![License](https://img.shields.io/badge/license-MIT-blue)
+</div>
+
 
 # このリポジトリについて
 
