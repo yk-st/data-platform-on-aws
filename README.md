@@ -1,6 +1,6 @@
 # data-platform-on-aws
 
-<p align="center"><b>以下の書籍に関するリポジトリです。データソースを担当します</b></p>
+<p align="center"><b>以下の書籍に関するリポジトリです。クラウド環境を担当します</b></p>
 
 <p align="center">
     <a href="https://www.amazon.co.jp/dp/4297145634/ref=sspa_dk_detail_0?psc=1&pd_rd_i=4297145634&pd_rd_w=BXEhW&content-id=amzn1.sym.f293be60-50b7-49bc-95e8-931faf86ed1e&pf_rd_p=f293be60-50b7-49bc-95e8-931faf86ed1e&pf_rd_r=VZ7P7XN3YX1NAMJAPZEB&pd_rd_wg=CuOVv&pd_rd_r=31953068-34be-40e1-978d-b417f6b20227&s=books&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw">
